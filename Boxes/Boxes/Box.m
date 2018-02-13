@@ -10,6 +10,7 @@
 
 @implementation Box
 
+//custom initializers
 -(instancetype)initWithHeight:(float)height Width:(float)width Length:(float)length {
     
     if (self = [super init])
@@ -21,6 +22,7 @@
     return self;
 }
 
+//methods
 - (float) volumeOfBox {
     return self.height * self.width *self.length;
 }
