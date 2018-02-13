@@ -10,8 +10,13 @@
 
 @interface Box : NSObject
 
+//properties
 @property float height;
-@property float Width;
+@property float width;
 @property float length;
+
+//initializers
+- (instancetype) initWithHeight:(float)height Width:(float)width Length:(float)length;
+
 
 @end
