@@ -15,8 +15,15 @@
 @property float width;
 @property float length;
 
+//@property float volumeOfBox;
+
 //initializers
 - (instancetype) initWithHeight:(float)height Width:(float)width Length:(float)length;
+
+//methods
+- (float) volumeOfBox;
+-(float)howManyOfFirstBox:(Box *)firstBox
+            CanFitInSecondBox:(Box *)secondBox;
 
 
 @end

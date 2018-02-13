@@ -21,6 +21,20 @@
     return self;
 }
 
-- 
+- (float) volumeOfBox {
+    return self.height * self.width *self.length;
+}
 
+-(float)howManyOfFirstBox:(Box *)firstBox
+        CanFitInSecondBox:(Box *)secondBox
+{
+    if (firstBox.volumeOfBox >= secondBox.volumeOfBox)
+    {
+        return (firstBox.volumeOfBox / secondBox.volumeOfBox);
+    } else if (firstBox.volumeOfBox < secondBox.volumeOfBox) {
+        return (secondBox.volumeOfBox / firstBox.volumeOfBox);
+    } else {
+        return 0;
+    }
+}
 @end
