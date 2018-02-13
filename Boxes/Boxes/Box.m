@@ -25,14 +25,15 @@
     return self.height * self.width *self.length;
 }
 
--(float)howManyOfFirstBox:(Box *)firstBox
-        CanFitInSecondBox:(Box *)secondBox
+-(float)howManyOtherBoxesCanFitInsideMe:(Box*)otherBox;
 {
-    if (firstBox.volumeOfBox >= secondBox.volumeOfBox)
+    if (self.volumeOfBox >= otherBox.volumeOfBox)
     {
-        return (firstBox.volumeOfBox / secondBox.volumeOfBox);
-    } else if (firstBox.volumeOfBox < secondBox.volumeOfBox) {
-        return (secondBox.volumeOfBox / firstBox.volumeOfBox);
+        NSLog(@"I can fit %.2f of the other boxes inside me", (self.volumeOfBox / otherBox.volumeOfBox));
+        return (self.volumeOfBox / otherBox.volumeOfBox);
+    } else if (self.volumeOfBox < otherBox.volumeOfBox) {
+        NSLog(@"%.2f boxes of myself can fit inside the other box", (otherBox.volumeOfBox / self.volumeOfBox));
+        return (otherBox.volumeOfBox / self.volumeOfBox);
     } else {
         return 0;
     }

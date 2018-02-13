@@ -22,8 +22,7 @@
 
 //methods
 - (float) volumeOfBox;
--(float)howManyOfFirstBox:(Box *)firstBox
-            CanFitInSecondBox:(Box *)secondBox;
+-(float)howManyOtherBoxesCanFitInsideMe:(Box*)otherBox;
 
 
 @end

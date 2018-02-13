@@ -12,17 +12,19 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         //initialize 2 boxes
-        Box *bigBox = [[Box alloc]initWithHeight:2 Width:3 Length:5];
-        Box *smallBox = [[Box alloc]initWithHeight:1 Width:2 Length:3];
+        Box *thisBox = [[Box alloc]initWithHeight:2 Width:3 Length:5];
+        Box *someOtherBox = [[Box alloc]initWithHeight:1 Width:2 Length:3];
+        Box *yetAnotherBox = [[Box alloc]initWithHeight:7 Width:2 Length:3];
         
         //log their volumes
-        NSLog(@"bigBox has a volume of %.f", bigBox.volumeOfBox);
-        NSLog(@"smallBox has a volume of %.f", smallBox.volumeOfBox);
+        NSLog(@"someBox has a volume of %.f", thisBox.volumeOfBox);
+        NSLog(@"someOtherBox has a volume of %.f", someOtherBox.volumeOfBox);
+        NSLog(@"yetAnotherBox has a volume of %.f", yetAnotherBox.volumeOfBox);
         
         //find out how many boxes can fit in the other
-        float howManyCanFit = [bigBox howManyOfFirstBox:bigBox CanFitInSecondBox:smallBox];
-        NSLog(@"%.f boxes can fit into each other",howManyCanFit);
-         
-         }
-         return 0;
-         }
+        [thisBox howManyOtherBoxesCanFitInsideMe:someOtherBox];
+        [thisBox howManyOtherBoxesCanFitInsideMe:yetAnotherBox];
+        
+    }
+    return 0;
+}
